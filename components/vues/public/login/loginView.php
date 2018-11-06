@@ -20,7 +20,7 @@ $session = new Session();
         <header class="header fixed-top">
             <a href="../"><img src="../components/public/img/logo.png" alt="Logo" /></a>
         </header>
-        
+        <?= $session->flash(); ?>
         <div class="row container-fluid login justify-content-around">
         
             <section>
@@ -66,7 +66,7 @@ $session = new Session();
             </section>
             
         </div>
-        <?= $session->flash(); ?>
+        
 
         <footer>
         

@@ -18,29 +18,29 @@ class UserManager extends Manager
             'email' => $login
         ));
         
-        while($userDB = $req->fetch())
+        $userDB = $req->fetch();
+        
+        if( !empty($userDB) && password_verify($password, $userDB['pwd']) )
         {
-            if(($login === $userDB['email']) && (password_verify($password, $userDB['pwd'])))
-            {
 
-                $userInfo = array(
-                    'nom' => $userDB['nom'],
-                    'prenom' => $userDB['prenom'],
-                    'dateBirth' => $userDB['dateBirth'],
-                    'mail' => $user['email']
-                );
-                
-                header('Location: ./dashboard/');
-                exit();
-            }
-            else
-            {
-                $session = new Session();
-                $session->setFlash('Indentifiants incorrect', 'danger');
-
-                header('Location:'.$_SERVER['HTTP_REFERER']);
-                exit();
-            }
+            $userInfo = array(
+                'nom' => $userDB['nom'],
+                'prenom' => $userDB['prenom'],
+                'dateBirth' => $userDB['dateBirth'],
+                'mail' => $user['email']
+            );
+            
+            header('Location: ./dashboard/');
+            exit();
         }
+        else
+        {
+            $session = new Session();
+            $session->setFlash('Indentifiants incorrect', 'danger');
+
+            header('Location:'.$_SERVER['HTTP_REFERER']);
+            exit();
+        }
+        
     }
 }

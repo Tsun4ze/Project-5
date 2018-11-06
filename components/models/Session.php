@@ -23,10 +23,10 @@ class Session
         if(isset($_SESSION['flash']))
         {
             ?>
-            <div id="alert" class="alert alert-<?= $_SESSION['flash']['type']; ?> alert-dismissible fade show" role="alert">
+            <div id="alert" class="alert alert-<?= $_SESSION['flash']['type']; ?> alert-dismissible fade show flashMsg" role="alert">
                 
                 <?= $_SESSION['flash']['message']; ?>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close" onclick="hideAlert()">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
