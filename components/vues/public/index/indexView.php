@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Test page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" media="screen" href="public/css/main.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="components/public/css/main.css" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         
@@ -13,7 +13,7 @@
 
     <body>
         <header class="header fixed-top">
-            <img src="public/img/logo.png" alt="Logo" />
+            <img src="components/public/img/logo.png" alt="Logo" />
         </header>
         
         <section class="jumbotron">
@@ -27,7 +27,7 @@
 
         <section class="bgMov">
             <video height="50%" width="100%" autoplay loop muted>
-                <source src="public/mov/bg.mp4" type="video/mp4">
+                <source src="components/public/mov/bg.mp4" type="video/mp4">
             </video>
         </section>
         

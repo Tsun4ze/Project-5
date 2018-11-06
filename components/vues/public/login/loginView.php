@@ -1,3 +1,8 @@
+<?php
+require '../components/models/autoload.php';
+$session = new Session();
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -5,7 +10,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Login - Test page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" media="screen" href="components/public/css/main.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="../components/public/css/main.css" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         
@@ -13,11 +18,11 @@
 
     <body>
         <header class="header fixed-top">
-            <a href="./"><img src="components/public/img/logo.png" alt="Logo" /></a>
+            <a href="../"><img src="../components/public/img/logo.png" alt="Logo" /></a>
         </header>
         
         <div class="row container-fluid login justify-content-around">
-
+        
             <section>
                 <h2>Random Stuff:</h2>
                 <p>
@@ -39,7 +44,7 @@
                     <h2 class="loginTitle">Identification:</h2>
                     <br />
 
-                    <form action="" method="post">
+                    <form action="../index.php?act=login" method="post">
                         <p>
                             <div class="form-group">
                                 <label for="user">Identifiant : </label><br />
@@ -61,9 +66,10 @@
             </section>
             
         </div>
-        
+        <?= $session->flash(); ?>
 
         <footer>
+        
             <h5>C'est la fin ! (ou pas) </h5>
         </footer>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

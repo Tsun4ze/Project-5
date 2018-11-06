@@ -1,0 +1,5 @@
+******INDEX**********
+*********************
+
+-> index.php?login=true
+-> index.php?act=login

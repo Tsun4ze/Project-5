@@ -68,6 +68,28 @@ footer
     background-color: black;
 }
 
+/* LOGIN */
+.login
+{
+    
+    margin-top:150px !important;
+}
+
+
+
+
+.loginTitle
+{
+    text-align:center;
+}
+
+.formInput
+{
+    max-width:300px;
+}
+
+
+
 @media screen and (max-width: 1200px)
 {
     .bgMov
