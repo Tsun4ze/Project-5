@@ -29,8 +29,8 @@ class UserManager extends Manager
                 'dateBirth' => $userDB['dateBirth'],
                 'mail' => $user['email']
             );
-            
-            header('Location: ./dashboard/');
+            $_SESSION['logged'] = 'true';
+            header('Location: index.php?act=dashboard');
             exit();
         }
         else

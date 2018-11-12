@@ -3,9 +3,9 @@ if(session_status() == PHP_SESSION_NONE) :
 	session_start();
 endif;
 
-require 'components/models/autoload.php';
-require 'components/controllers/Frontend.php';
-require 'components/controllers/Backend.php';
+require 'models/autoload.php';
+require 'controllers/Frontend.php';
+require 'controllers/Backend.php';
 
 $frontend = new Frontend();
 $backend = new Backend();
@@ -18,15 +18,19 @@ try
         {
             $backend->login();
         }
+        elseif($_GET['act'] === 'connect')
+        {
+            $frontend->userconnect();
+        }
+        elseif($_GET['act'] === 'dashboard')
+        {
+            $frontend->dashboard();
+        }
     }
     
-    /* elseif(isset($_GET['login'] === 'true'))
-    {
-         ... 
-    } */
     else
     {
-        return $frontend->index();
+        $frontend->index();
     }
 }
 catch(Exception $e) 

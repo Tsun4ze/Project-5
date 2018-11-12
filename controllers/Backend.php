@@ -12,7 +12,7 @@ class Backend
             if((isset($_POST['usrLog'])) && (isset($_POST['pwdLog'])) && (!empty($_POST['usrLog'])) && (!empty($_POST['pwdLog'])))
             {
                 $usrManager->checkLogin($_POST['usrLog'], $_POST['pwdLog']);
-                $_SESSION['logged'] = 'true';
+                
 
                 
             }

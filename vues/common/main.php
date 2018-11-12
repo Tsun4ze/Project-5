@@ -1,11 +1,16 @@
+<?php
+
+$session = new Session();
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Login - Test page</title>
+        <title>Test page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" media="screen" href="../components/public/css/main.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="public/css/main.css" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         
@@ -13,15 +18,18 @@
 
     <body>
         <header class="header fixed-top">
-            <a href="../"><img src="../components/public/img/logo.png" alt="Logo" /></a>
+        <?= $session->flash(); ?>
+            <div class="row justify-content-between">
+                <a href="index.php"><img src="public/img/logo.png" alt="Logo" /></a>
+                <div class="row headerConnect">
+                    <i class="fas fa-user fa-x"></i>
+                    <a href="index.php?act=connect">Connexion</a>
+                </div>
+            </div>
+            
         </header>
         
-        <div class="row container-fluid login justify-content-around">
-
-            <h1>HELLO THERE</h1>
-            
-        </div>
-        
+        <?= $contentView ?> 
 
         <footer>
             <h5>C'est la fin ! (ou pas) </h5>

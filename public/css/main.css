@@ -20,6 +20,13 @@ header, img
     left: 0;
     z-index: 200;
 }
+
+.headerConnect
+{
+    margin:auto;
+    padding-right: 50px;
+}
+
 .jumbotron
 {
     padding: 0 !important;
