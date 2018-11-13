@@ -29,6 +29,16 @@ class Backend
 
     public function userLab()
     {
+        
+
         require 'vues/auth/dashLab.php';
+    }
+
+    public function userLablist()
+    {
+        $db = Database::dbconnect();
+        $usrManager = New UserManager($db);
+
+        require 'vues/auth/userList.php';
     }
 }

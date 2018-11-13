@@ -37,6 +37,10 @@ try
             header('Location: ./');
             exit();
         }
+        elseif($_GET['act'] === 'usrList')
+        {
+            $backend->userLabList();
+        }
     }
     
     else

@@ -102,8 +102,37 @@ footer
     max-width:300px;
 }
 
+.dashLab
+{
+    margin:auto;
+    margin-top:150px !important;
+}
+
+.aPanel
+{
+    margin-left: 20px !important;
+    float:left;
+    width:30%;
+    
+}
+
+.pList
+{
+    list-style: none;
+}
 
 
+.listUser
+{
+    margin:auto;
+    margin-top:150px !important;
+    width:75%;
+}
+
+footer
+{
+    padding:20px;
+}
 @media screen and (max-width: 1200px)
 {
     .bgMov

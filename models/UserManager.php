@@ -57,4 +57,17 @@ class UserManager extends Manager
         }
         
     }
+
+    public function getUsers()
+    {
+        $sql = 'SELECT id, nom, prenom, email, dateBirth FROM users WHERE adm = 0';
+        $req = $this->_db->query($sql);
+        while($userInfo = $req->fetch())
+        {
+            $listUser[] = new User($userInfo);
+        }
+        $req->closeCursor();
+
+        return $listUser;
+    }
 }
