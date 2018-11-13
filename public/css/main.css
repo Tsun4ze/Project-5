@@ -110,6 +110,8 @@ footer
 
 .aPanel
 {
+    margin:auto;
+    margin-top:150px !important;
     margin-left: 20px !important;
     float:left;
     width:30%;
@@ -126,7 +128,7 @@ footer
 {
     margin:auto;
     margin-top:150px !important;
-    width:75%;
+    width:60%;
 }
 
 footer

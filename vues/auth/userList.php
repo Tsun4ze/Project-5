@@ -1,8 +1,10 @@
 <?php
 ob_start();
 ?>
-<?= require 'vues/auth/asideCtrlPnl.php'; ?>
-<h1>FIX THAT PANEL !</h1>
+<div class="row">
+
+<?php require 'vues/auth/asideCtrlPnl.php'; ?>
+
 <section class="listUser">
 
     <table class="table table-hover">
@@ -33,6 +35,9 @@ ob_start();
     </tbody>
     </table>
 </section>
+
+</div>
+
 
 
 <?php

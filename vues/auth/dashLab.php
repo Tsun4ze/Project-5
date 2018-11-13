@@ -4,9 +4,9 @@ ob_start();
 ?>
 
 
-
+<?php require 'vues/auth/asideCtrlPnl.php'; ?>
 <section class="dashLab row">
-    <?php require 'vues/auth/asideCtrlPnl.php'; ?>
+    
     <h2>Main stuff</h2>
     <br />
         <div>
