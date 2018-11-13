@@ -34,7 +34,7 @@ class UserManager extends Manager
             if($userDB['adm'] === '1')
             {
                 
-                
+                $_SESSION['agLab'] = 'on';
                 header('Location: index.php?act=dashLab');
                 exit();
             }

@@ -23,7 +23,17 @@ $session = new Session();
                 <a href="index.php"><img src="public/img/logo.png" alt="Logo" /></a>
                 <div class="row headerConnect">
                     <i class="fas fa-user fa-x"></i>
-                    <a href="index.php?act=connect">Connexion</a>
+                    <?php
+                        if(isset($_SESSION['logged']) && $_SESSION['logged'] === 'true')
+                        {
+                            echo '<a href="index.php?act=login">Profil</a>';
+                        }
+                        else
+                        {
+                            echo '<a href="index.php?act=connect">Connexion</a>';
+                        }
+                        ?>
+                    
                 </div>
             </div>
             

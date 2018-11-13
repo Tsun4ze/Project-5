@@ -16,7 +16,25 @@ try
     {
         if($_GET['act'] === 'login')
         {
-            $backend->login();
+            if(isset($_SESSION['logged']) && $_SESSION['logged'] === 'true')
+            {
+                if(isset($_SESSION['agLab']) && $_SESSION['agLab'] === 'on')
+                {
+                    header('Location: index.php?act=dashLab');
+                    exit();
+                }
+                else
+                {
+                    header('Location: index.php?act=dashboard');
+                    exit();
+                }
+                
+            }
+            else
+            {
+                $backend->login();
+            }
+            
         }
         elseif($_GET['act'] === 'connect')
         {

@@ -3,17 +3,23 @@ ob_start();
 
 ?>
 
+<div class="row">
 
-<?php require 'vues/auth/asideCtrlPnl.php'; ?>
-<section class="dashLab row">
-    
-    <h2>Main stuff</h2>
-    <br />
-        <div>
-            
-        </div>
-    
-</section>
+    <?php require 'vues/auth/asideCtrlPnl.php'; ?>
+    <section class="dashLab ">
+        
+        <h2>Main stuff</h2>
+        <br />
+            <div>
+                <p>
+                    Maybe some news from the F society !
+                </p>
+            </div>
+        
+    </section>
+
+</div>
+
 
 
 <?php
