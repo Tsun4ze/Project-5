@@ -26,6 +26,17 @@ try
         {
             $frontend->dashboard();
         }
+        elseif($_GET['act'] === 'dashLab')
+        {
+            $backend->userLab();
+        }
+        elseif($_GET['act'] === 'disconnect')
+        {
+            session_destroy();
+
+            header('Location: ./');
+            exit();
+        }
     }
     
     else

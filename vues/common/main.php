@@ -32,7 +32,18 @@ $session = new Session();
         <?= $contentView ?> 
 
         <footer>
-            <h5>C'est la fin ! (ou pas) </h5>
+            <div class="row justify-content-between">
+                <h5>C'est la fin ! (ou pas) </h5>
+                <?php
+                if(isset($_SESSION['logged']) && $_SESSION['logged'] === 'true')
+                {
+                    echo '<a href="index.php?act=disconnect">Deconnexion</a>';
+                }
+                ?>
+            
+            
+            </div>
+            
         </footer>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

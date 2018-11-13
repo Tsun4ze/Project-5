@@ -30,8 +30,22 @@ class UserManager extends Manager
                 'mail' => $user['email']
             );
             $_SESSION['logged'] = 'true';
-            header('Location: index.php?act=dashboard');
-            exit();
+
+            if($userDB['adm'] === '1')
+            {
+                
+                
+                header('Location: index.php?act=dashLab');
+                exit();
+            }
+            else
+            {
+                header('Location: index.php?act=dashboard');
+                exit();
+            }
+
+            
+            
         }
         else
         {

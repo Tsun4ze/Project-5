@@ -26,4 +26,9 @@ class Backend
             }
         }
     }
+
+    public function userLab()
+    {
+        require 'vues/auth/dashLab.php';
+    }
 }
