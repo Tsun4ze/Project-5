@@ -59,6 +59,10 @@ try
         {
             $backend->userLabList();
         }
+        elseif($_GET['act'] === 'results')
+        {
+            $frontend->userResults();
+        }
     }
     
     else

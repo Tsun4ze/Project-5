@@ -17,5 +17,12 @@ class Frontend
     function dashboard()
     {
         require 'vues/public/dashboard.php';
-    }    
+    }
+    
+    function userResults()
+    {
+        $db = Database::dbconnect();
+        $dataList = new DataUserManager($db);
+        require 'vues/public/results.php';
+    }
 }

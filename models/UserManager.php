@@ -4,8 +4,6 @@ class UserManager extends Manager
 {
     public $_db;
     
-    
-
 	public function __construct(PDO $db)
 	{
 		$this->_db = $db;
@@ -23,14 +21,10 @@ class UserManager extends Manager
         if( !empty($userDB) && password_verify($password, $userDB['pwd']) )
         {
 
-            $userInfo = array(
-                'nom' => $userDB['nom'],
-                'prenom' => $userDB['prenom'],
-                'dateBirth' => $userDB['dateBirth'],
-                'mail' => $user['email']
-            );
+            
             $_SESSION['logged'] = 'true';
-
+            $_SESSION['nom'] = $userDB['nom'];
+            $_SESSION['prenom'] = $userDB['prenom'];
             if($userDB['adm'] === '1')
             {
                 
