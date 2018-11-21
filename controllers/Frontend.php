@@ -25,4 +25,11 @@ class Frontend
         $dataList = new DataUserManager($db);
         require 'vues/public/results.php';
     }
+
+    function pdf()
+    {
+        
+        
+        require 'vues/common/createPDF.php';
+    }
 }

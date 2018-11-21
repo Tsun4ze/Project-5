@@ -4,6 +4,7 @@ if(session_status() == PHP_SESSION_NONE) :
 endif;
 
 require 'models/autoload.php';
+
 require 'controllers/Frontend.php';
 require 'controllers/Backend.php';
 
@@ -62,6 +63,10 @@ try
         elseif($_GET['act'] === 'results')
         {
             $frontend->userResults();
+        }
+        elseif($_GET['act'] === 'PDF')
+        {
+            $frontend->pdf();
         }
     }
     

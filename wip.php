@@ -1,18 +1,12 @@
 <?php
-require 'models/fpdf181/fpdf.php';
 
 class PDF extends FPDF
 {
     function Header()
     {
         //LOGO
-        $this->Image('public/img/logo.png', 10, 6, 30);
-        //Font Title
-        $this->SetFont('Arial', 'B', 15);
-        //Move to the right
-        $this->Cell(80);
-        //Title
-        $this->Cell(30, 10, 'Main Title', 1, 0, 'C');
+        $this->Image('public/img/logo.png', 8, 2, 80);
+        
         //Line Break
         $this->Ln(20);
     }
@@ -20,13 +14,13 @@ class PDF extends FPDF
     
 }
 
-$pdf = new PDF();
+$pdf = new PDF('P', 'mm', 'A4');
 
 $pdf->AddPage();
-$pdf->SetFont('Arial', 'B', 12);
-$pdf->Cell(40,10, 'Hello World');
-$pdf->Cell(60,10,'Powered by FPDF.',0,1,'C');
-$pdf->Ln(10);
-for($i=1;$i<=10;$i++)
-    $pdf->Cell(0,10,'Here we have line # '.$i, 0, 1);
+$pdf->SetFont('Helvetica', '', 11);
+$pdf->SetTextColor(0);
+foreach($dataList->getUserResults() as $row)
+ $pdf->Text(120,38, $row['Nom'].' '.$row['Prenom']);
+
+
 $pdf->Output();

@@ -22,63 +22,63 @@ ob_start();
         
                 <tr>
                     <td>Hématies</td>
-                    <td><?= $dataUser->Hematie() ?> M/mm3</td>
+                    <td id="data1"><?= $dataUser->Hematie() ?> M/mm3</td>
                     <td>(4.50 à 6.50)</td>
                     
                 </tr>
 
                 <tr>
                     <td>Hémoglobine</td>
-                    <td><?= $dataUser->Hemoglob() ?> g/100ml</td>
+                    <td id="data2"><?= $dataUser->Hemoglob() ?> g/100ml</td>
                     <td>(13.0 à 17.0)</td>
                     
                 </tr>
 
                 <tr>
                     <td>Hématocrite</td>
-                    <td><?= $dataUser->Hemato() ?> %</td>
+                    <td id="data3"><?= $dataUser->Hemato() ?> %</td>
                     <td>(40.0 à 54.0)</td>
                     
                 </tr>
 
                 <tr>
                     <td>Polynucléaires Neutrophiles</td>
-                    <td><?= $dataUser->PN() ?> /mm3</td>
+                    <td id="data4"><?= $dataUser->PN() ?> /mm3</td>
                     <td>(2000 à 7500)</td>
                     
                 </tr>
 
                 <tr>
                     <td>Polynucléaires Eosinophiles</td>
-                    <td><?= $dataUser->PE() ?> /mm3</td>
+                    <td id="data5"><?= $dataUser->PE() ?> /mm3</td>
                     <td>(< à 500)</td>
                     
                 </tr>
 
                 <tr>
                     <td>Polynucléaires Basophiles</td>
-                    <td><?= $dataUser->PB() ?> /mm3</td>
+                    <td id="data6"><?= $dataUser->PB() ?> /mm3</td>
                     <td>(< à 200)</td>
                     
                 </tr>
 
                 <tr>
                     <td>Lymphocytes</td>
-                    <td><?= $dataUser->Lympho() ?> /mm3</td>
+                    <td id="data7"><?= $dataUser->Lympho() ?> /mm3</td>
                     <td>(1000 à 4000)</td>
                     
                 </tr>
 
                 <tr>
                     <td>Monocytes</td>
-                    <td><?= $dataUser->Monocy() ?> /mm3</td>
+                    <td id="data8"><?= $dataUser->Monocy() ?> /mm3</td>
                     <td>(200 à 1000)</td>
                     
                 </tr>
 
                 <tr>
                     <td>Plaquettes</td>
-                    <td><?= $dataUser->Plaquette() ?> /mm3</td>
+                    <td id="data9"><?= $dataUser->Plaquette() ?> /mm3</td>
                     <td>(150 000 à 400 000)</td>
                     
                 </tr>
@@ -90,6 +90,9 @@ ob_start();
         </tbody>
     </table>
 
+    <br />
+    <a href="index.php?act=PDF" target="_blank" class="btn btn-primary">Générer un document PDF</a>
+    <br />
 </section>
 
 <?php
