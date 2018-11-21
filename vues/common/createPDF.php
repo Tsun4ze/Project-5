@@ -113,11 +113,9 @@ $pdf->AddPage();
 /* $pdf->Image('public/img/logo.png', 8, 2, 80); */
 $pdf->SetFont('Helvetica', '', 11);
 $pdf->SetTextColor(0);
-$pdf->topRdata($db);
 
-
-$pdf->headerTable();
-
-$pdf->viewTable($db);
+$pdf->topRdata($db);    //
+$pdf->headerTable();    // Display Content
+$pdf->viewTable($db);   //
 
 $pdf->Output('Document.pdf', 'I');
