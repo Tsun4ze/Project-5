@@ -51,7 +51,10 @@ header, img
 
 }
 
-
+.add
+{
+    max-width: 60%;
+}
 
 .work
 {
@@ -116,7 +119,7 @@ footer
     margin-left: 20px !important;
     float:left;
     width:30%;
-
+    height:95vh;
     
     background-color:lightgray;
     z-index:150;

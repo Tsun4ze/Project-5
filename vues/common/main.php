@@ -56,9 +56,63 @@ $session = new Session();
             
         </footer>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        
+        <script>
+
+            <?php
+                $query10 = $db->prepare('SELECT Hematie, Hemoglob, Hemato, PN, PE, PB, Lympho, Monocy, Plaquette FROM datauser WHERE Nom = :userNom AND Prenom = :userPrenom');
+                $query10->bindValue(':userNom', $_SESSION['nom'], PDO::PARAM_STR);
+                $query10->bindValue(':userPrenom', $_SESSION['prenom'], PDO::PARAM_STR);
+                $query10->execute();
+                 
+                $row10 = $query10->fetch();
+                   
+                
+            ?>        
+
+
+            // Load the Visualization API and the corechart package.
+            google.charts.load('current', {'packages':['bar']});
+
+            // Set a callback to run when the Google Visualization API is loaded.
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() 
+            {
+
+            var options = {
+                bars: 'vertical',
+                vAxis: {format: 'decimal'},
+                colors: ['#1b9e77', '#7570b3', '#cc0000']
+            };
+            // Create the data Table
+            var data = new google.visualization.arrayToDataTable([
+                [   {label: 'Examen', id: 'Examen'},
+                    {label: 'Resultats', id: 'Resultats'},
+                    {label: 'Normes (min)', id: 'MinNormes'},
+                    {label: 'Normes (max)', id: 'MaxNormes'}],
+                ['Hematie',<?= $row10['Hematie'] ?>, 4.50, 6.50]
+            ]);
+            
+            
+
+            //Actual Live test
+            var dataTest = new google.visualization.DataTable([
+                ['ExamenTest', 'Resultat_Test', 'Normes_Test'],
+                ['Alpha', 99, 20],
+                ['Beta', 69, 71],
+                ['Delta', 10, 50]
+            ]);
+
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.charts.Bar(document.getElementById('chart_div'));
+            chart.draw(data, google.charts.Bar.convertOptions(options));
+            }
+        </script>
 
     </body>
 </html>

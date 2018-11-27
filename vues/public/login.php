@@ -20,7 +20,7 @@ ob_start();
                 </p>
             </section>
 
-            <section>
+            <section >
                 <div class="loginForm">
                     <h2 class="loginTitle">Identification:</h2>
                     <br />

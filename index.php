@@ -68,6 +68,10 @@ try
         {
             $frontend->pdf();
         }
+        elseif($_GET['act'] === 'add')
+        {
+            $backend->addClient();
+        }
     }
     
     else

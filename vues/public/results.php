@@ -90,10 +90,16 @@ ob_start();
         </tbody>
     </table>
 
-    <br />
-    <a href="index.php?act=PDF" target="_blank" class="btn btn-primary">Générer un document PDF</a>
-    <br />
+    <div id="chart_div" style="width: 450px; height:250px;">
+            
+    </div>
+
+    <div >
+        <a href="index.php?act=PDF" target="_blank" class="btn btn-primary">Générer un document PDF</a>
+    </div>
 </section>
+
+
 
 <?php
 $contentView = ob_get_clean();

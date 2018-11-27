@@ -40,4 +40,9 @@ class Backend
 
         require 'vues/auth/userList.php';
     }
+
+    public function addClient()
+    {
+        require 'vues/auth/addClient.php';
+    }
 }
