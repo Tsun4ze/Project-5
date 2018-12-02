@@ -72,6 +72,10 @@ try
         {
             $backend->addClient();
         }
+        elseif($_GET['act'] === 'new')
+        {
+            $backend->newUser();
+        }
     }
     
     else

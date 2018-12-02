@@ -64,4 +64,20 @@ class UserManager extends Manager
 
         return $listUser;
     }
+
+    public function addUser()
+    {
+        $hashedPass = password_hash($_POST['addPwd'], PASSWORD_DEFAULT);
+
+        $sql = 'INSERT INTO users (nom, prenom, adm, pwd, email, dateBirth)
+                VALUES (:nom, :prenom, 0, :pwd, :email, :dateBirth)';
+        $req = $this->_db->prepare($sql);
+        $req->execute(array(
+            'nom' => $_POST['addName'],
+            'prenom' => $_POST['addPre'],
+            'pwd' => $hashedPass,
+            'email' => $_POST['addMail'],
+            'dateBirth' => $_POST['addBirth']
+        ));
+    }
 }

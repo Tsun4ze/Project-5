@@ -12,28 +12,28 @@ ob_start();
         <form action="index.php?act=newClient" method="post">
             <p>
                 <div class="form-group">
-                    <label for="">Nom : </label><br />
-                    <input type="text" name="" id="" class="form-control" />
+                    <label for="name">Nom : </label><br />
+                    <input type="text" name="addName" id="name" class="form-control" />
                 </div>
 
                 <div class="form-group">
-                    <label for="">Prenom : </label><br />
-                    <input type="text" name="" id="" class="form-control" />
+                    <label for="prename">Prenom : </label><br />
+                    <input type="text" name="addPre" id="prename" class="form-control" />
                 </div>
 
                 <div class="form-group">
-                    <label for="">Email : </label>
-                    <input type="email" name="" id="" class="form-control" />
+                    <label for="mail">Email : </label>
+                    <input type="email" name="addMail" id="mail" class="form-control" />
                 </div>
 
                 <div class="form-group">
-                    <label for="">Date de naissance : </label>
-                    <input type="date" name="" id="" class="form-control">
+                    <label for="birth">Date de naissance : </label>
+                    <input type="date" name="addBirth" id="birth" class="form-control">
                 </div>
 
                 <div class="form-group">
-                    <label for="">Mot de Passe : </label><br />
-                    <input type="password" name="" id="" class="form-control">
+                    <label for="pass">Mot de Passe : </label><br />
+                    <input type="password" name="addPwd" id="pass" class="form-control">
                 </div>
 
                 <br />

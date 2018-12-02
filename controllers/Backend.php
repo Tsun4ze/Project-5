@@ -45,4 +45,25 @@ class Backend
     {
         require 'vues/auth/addClient.php';
     }
+
+    public function newUser()
+    {
+        $db = Database::dbconnect();
+        $userMgr = New UserManager($db);
+
+        if(!empty($_POST['addName']) && !empty($_POST['addPre']) && !empty($_POST['addMail']) && !empty($_POST['addBirth']) && !empty($_POST['addPwd']))
+        {
+            $userMgr->addUser();
+            $session = new Session();
+            $session->setFlash('Utilisateur enregistré !', 'success');
+
+            header('Location: index.php?act=usrList');
+            exit();
+        }
+        else
+        {
+            $session = new Session();
+            $session->setFlash('Un ou plusieurs champs sont vides !', 'warning');
+        }
+    }
 }

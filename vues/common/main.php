@@ -18,7 +18,7 @@ $session = new Session();
 
     <body>
         <header class="header fixed-top">
-        <?= $session->flash(); ?>
+        
             <div class="row justify-content-between">
                 <a href="index.php"><img src="public/img/logo.png" alt="Logo" /></a>
                 <div class="row headerConnect">
@@ -39,6 +39,8 @@ $session = new Session();
             
         </header>
         
+        <?= $session->flash(); ?>
+
         <?= $contentView ?> 
 
         <footer>
@@ -100,13 +102,13 @@ $session = new Session();
             
             
 
-            //Actual Live test
+           /*  //Actual Live test
             var dataTest = new google.visualization.DataTable([
                 ['ExamenTest', 'Resultat_Test', 'Normes_Test'],
                 ['Alpha', 99, 20],
                 ['Beta', 69, 71],
                 ['Delta', 10, 50]
-            ]);
+            ]); */
 
             // Instantiate and draw our chart, passing in some options.
             var chart = new google.charts.Bar(document.getElementById('chart_div'));
