@@ -138,6 +138,12 @@ footer
     width:60%;
 }
 
+.graphTitle
+{
+    text-align: center;
+    
+}
+
 footer
 {
     padding:20px;

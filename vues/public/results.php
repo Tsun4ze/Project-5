@@ -90,9 +90,31 @@ ob_start();
         </tbody>
     </table>
 
-    <div id="chart_div" style="width: 450px; height:250px;">
-            
+    <br />
+    
+    <div class="graphTitle">
+            <h2>Résultats Graphiques :</h2>
+    </div> 
+
+    <br />
+
+    <div class="row">
+           
+        
+        <div id="chart_div" style="width: 40%; height:250px;margin:auto;"></div>
+        <div id="chart_div2" style="width: 40%; height:250px;margin:auto;"></div>
+        <div id="chart_div3" style="width: 40%; height:250px;margin:auto;"></div>
+        <div id="chart_div4" style="width: 40%; height:250px;margin:auto;"></div>
+        <div id="chart_div5" style="width: 40%; height:250px;margin:auto;"></div>
+        <div id="chart_div6" style="width: 40%; height:250px;margin:auto;"></div>
+        <div id="chart_div7" style="width: 40%; height:250px;margin:auto;"></div>
+        <div id="chart_div8" style="width: 40%; height:250px;margin:auto;"></div>
+        <div id="chart_div9" style="width: 40%; height:250px;margin:auto;"></div>
+        
     </div>
+   
+            
+    
 
     <div >
         <a href="index.php?act=PDF" target="_blank" class="btn btn-primary">Générer un document PDF</a>

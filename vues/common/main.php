@@ -45,7 +45,7 @@ $session = new Session();
 
         <footer>
             <div class="row justify-content-between">
-                <h5>C'est la fin ! (ou pas) </h5>
+                <h6>FuturLab, all rights reserved <span><i class="fas fa-copyright"></i></span> </h6>
                 <?php
                 if(isset($_SESSION['logged']) && $_SESSION['logged'] === 'true')
                 {
@@ -91,15 +91,72 @@ $session = new Session();
                 vAxis: {format: 'decimal'},
                 colors: ['#1b9e77', '#7570b3', '#cc0000']
             };
+
             // Create the data Table
             var data = new google.visualization.arrayToDataTable([
                 [   {label: 'Examen', id: 'Examen'},
-                    {label: 'Resultats', id: 'Resultats'},
                     {label: 'Normes (min)', id: 'MinNormes'},
+                    {label: 'Resultats', id: 'Resultats'},
                     {label: 'Normes (max)', id: 'MaxNormes'}],
-                ['Hematie',<?= $row10['Hematie'] ?>, 4.50, 6.50]
+                ['Hematie',4.50, <?= $row10['Hematie'] ?>, 6.50]
             ]);
             
+            var data2 = new google.visualization.arrayToDataTable([
+                [   {label: 'Examen', id: 'Examen'},
+                    {label: 'Normes (min)', id: 'MinNormes'},
+                    {label: 'Resultats', id: 'Resultats'},
+                    {label: 'Normes (max)', id: 'MaxNormes'}],
+                ['Hemoglobine',13.0, <?= $row10['Hemoglob'] ?>, 17.0]
+            ]);
+            var data3 = new google.visualization.arrayToDataTable([
+                [   {label: 'Examen', id: 'Examen'},
+                    {label: 'Normes (min)', id: 'MinNormes'},
+                    {label: 'Resultats', id: 'Resultats'},
+                    {label: 'Normes (max)', id: 'MaxNormes'}],
+                ['Hematocrite',40, <?= $row10['Hemato'] ?>, 54]
+            ]);
+            var data4 = new google.visualization.arrayToDataTable([
+                [   {label: 'Examen', id: 'Examen'},
+                    {label: 'Normes (min)', id: 'MinNormes'},
+                    {label: 'Resultats', id: 'Resultats'},
+                    {label: 'Normes (max)', id: 'MaxNormes'}],
+                ['Polynucléaires Neutro',2000, <?= $row10['PN'] ?>, 7500]
+            ]);
+            var data5 = new google.visualization.arrayToDataTable([
+                [   {label: 'Examen', id: 'Examen'},
+                    {label: 'Normes (min)', id: 'MinNormes'},
+                    {label: 'Resultats', id: 'Resultats'},
+                    {label: 'Normes (max)', id: 'MaxNormes'}],
+                ['Polynucléaires Eosino',0, <?= $row10['PE'] ?>, 500]
+            ]);
+            var data6 = new google.visualization.arrayToDataTable([
+                [   {label: 'Examen', id: 'Examen'},
+                    {label: 'Normes (min)', id: 'MinNormes'},
+                    {label: 'Resultats', id: 'Resultats'},
+                    {label: 'Normes (max)', id: 'MaxNormes'}],
+                ['Polynucléaires Baso',0, <?= $row10['PB'] ?>, 200]
+            ]);
+            var data7 = new google.visualization.arrayToDataTable([
+                [   {label: 'Examen', id: 'Examen'},
+                    {label: 'Normes (min)', id: 'MinNormes'},
+                    {label: 'Resultats', id: 'Resultats'},
+                    {label: 'Normes (max)', id: 'MaxNormes'}],
+                ['Lymphocytes',1000, <?= $row10['Lympho'] ?>, 4000]
+            ]);
+            var data8 = new google.visualization.arrayToDataTable([
+                [   {label: 'Examen', id: 'Examen'},
+                    {label: 'Normes (min)', id: 'MinNormes'},
+                    {label: 'Resultats', id: 'Resultats'},
+                    {label: 'Normes (max)', id: 'MaxNormes'}],
+                ['Monocytes',200, <?= $row10['Monocy'] ?>, 1000]
+            ]);
+            var data9 = new google.visualization.arrayToDataTable([
+                [   {label: 'Examen', id: 'Examen'},
+                    {label: 'Normes (min)', id: 'MinNormes'},
+                    {label: 'Resultats', id: 'Resultats'},
+                    {label: 'Normes (max)', id: 'MaxNormes'}],
+                ['Plaquettes',150000, <?= $row10['Plaquette'] ?>, 400000]
+            ]);
             
 
            /*  //Actual Live test
@@ -113,6 +170,22 @@ $session = new Session();
             // Instantiate and draw our chart, passing in some options.
             var chart = new google.charts.Bar(document.getElementById('chart_div'));
             chart.draw(data, google.charts.Bar.convertOptions(options));
+            var chart = new google.charts.Bar(document.getElementById('chart_div2'));
+            chart.draw(data2, google.charts.Bar.convertOptions(options));
+            var chart = new google.charts.Bar(document.getElementById('chart_div3'));
+            chart.draw(data3, google.charts.Bar.convertOptions(options));
+            var chart = new google.charts.Bar(document.getElementById('chart_div4'));
+            chart.draw(data4, google.charts.Bar.convertOptions(options));
+            var chart = new google.charts.Bar(document.getElementById('chart_div5'));
+            chart.draw(data5, google.charts.Bar.convertOptions(options));
+            var chart = new google.charts.Bar(document.getElementById('chart_div6'));
+            chart.draw(data6, google.charts.Bar.convertOptions(options));
+            var chart = new google.charts.Bar(document.getElementById('chart_div7'));
+            chart.draw(data7, google.charts.Bar.convertOptions(options));
+            var chart = new google.charts.Bar(document.getElementById('chart_div8'));
+            chart.draw(data8, google.charts.Bar.convertOptions(options));
+            var chart = new google.charts.Bar(document.getElementById('chart_div9'));
+            chart.draw(data9, google.charts.Bar.convertOptions(options));
             }
         </script>
 
