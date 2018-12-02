@@ -9,7 +9,7 @@ ob_start();
         <h2 class="loginTitle">Ajouter un nouveau patient :</h2>
         <br />
 
-        <form action="index.php?act=newClient" method="post">
+        <form action="index.php?act=new" method="post">
             <p>
                 <div class="form-group">
                     <label for="name">Nom : </label><br />

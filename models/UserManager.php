@@ -79,5 +79,14 @@ class UserManager extends Manager
             'email' => $_POST['addMail'],
             'dateBirth' => $_POST['addBirth']
         ));
+        $req->closeCursor();
+
+        $sql2 = 'INSERT INTO datauser (Nom, Prenom, Hematie, Hemoglob, Hemato, PN, PE, PB, Lympho, Monocy, Plaquette) VALUES (:Nom, :Prenom, 0, 0, 0, 0, 0, 0, 0, 0, 0)';
+        $req2 = $this->_db->prepare($sql2);
+        $req2->execute(array(
+            'Nom' => $_POST['addName'],
+            'Prenom' => $_POST['addPre']
+        ));
+        $req2->closeCursor();
     }
 }

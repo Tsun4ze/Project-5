@@ -4,11 +4,37 @@
         <h3>Control panel</h3>
 
         <ul class="pList">
-            <li><a href="index.php?act=usrList">(add logo !!!) Liste Patients</a></li>
-            <li><a href="index.php?act=add">Ajouter un client</a></li>
-            <li>somelink3 (add logo !!!)</li>
-            <li>somelink4 (add logo !!!)</li>
-            <li>somelink5 (add logo !!!)</li>
+            <li>
+                <a href="index.php?act=usrList">
+                    <span style="color:#007bff">
+                        <i class="fas fa-user-friends"></i>
+                    </span>
+                    Liste Patients
+                </a>
+            </li>
+
+            <br />
+
+            <li>
+                <a href="index.php?act=add">
+                    <span>
+                        <i class="fas fa-user-plus"></i>
+                    </span>
+                    Ajouter un client
+                </a>
+            </li>
+
+            <br />
+
+            <li>
+                <a href="#">
+                    <span>
+                        <i class="fas fa-user-edit"></i>
+                    </span>
+                    Modifier les résultats utilisateur
+                </a>
+            </li>
+            
         </ul>
 
     </div>
