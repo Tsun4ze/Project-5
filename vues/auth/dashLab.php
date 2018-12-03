@@ -8,12 +8,10 @@ ob_start();
     <?php require 'vues/auth/asideCtrlPnl.php'; ?>
     <section class="dashLab ">
         
-        <h2>Main stuff</h2>
+        <h2>CNRS news :</h2>
         <br />
             <div>
-                <p>
-                    Maybe some news from the F society !
-                </p>
+                <a class="twitter-timeline" data-height="650" data-width="850" href="https://twitter.com/CNRS?ref_src=twsrc%5Etfw">Tweets by CNRS</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>  
             </div>
         
     </section>

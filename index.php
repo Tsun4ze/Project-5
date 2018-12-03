@@ -76,6 +76,17 @@ try
         {
             $backend->newUser();
         }
+        elseif($_GET['act'] ==='update')
+        {
+            if(isset($_GET['nm']) && isset($_GET['pre']))
+            {
+                $backend->dataUser();
+            }
+            else
+            {
+                $backend->errorUser();
+            }
+        }
     }
     
     else

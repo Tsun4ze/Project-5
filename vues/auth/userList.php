@@ -15,6 +15,7 @@ ob_start();
             <th scope="col">Prenom</th>
             <th scope="col">Date de Naissance</th>
             <th scope="col">Email</th>
+            <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -28,6 +29,11 @@ ob_start();
                 <td><?=$userInfo->prenom() ?></td>
                 <td><?=$userInfo->dateBirth() ?></td>
                 <td><?=$userInfo->email() ?></td>
+                <td>
+                    <form action="index.php?act=update&nm=<?= $userInfo->nom() ?>&pre=<?= $userInfo->prenom() ?>" method="post">
+                        <input type="submit" name="updtUser" value="Modifier les résultats bio" class="btn btn-warning">
+                    </form>
+                </td>
                 </tr>
             <?php
             }

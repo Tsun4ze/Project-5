@@ -31,22 +31,22 @@ ob_start();
                     <span style="color:#007bff;">
                         <i class="fas fa-syringe fa-3x"></i>
                     </span>
-                    <h3>Item 1</h3>
-                    <p>Random text. Random text. Random text. Random text. Random text. Random text. </p>
+                    <h3>Prélèvement :</h3>
+                    <p style="max-width:33%;margin:auto;">A votre arrivée dans l'un de nos laboratoire, vous serez accueillit par l'un de nos agent, qui effectuera les tests en fonction de votre ordonnance.</p>
                 </div>
                 <div>
                     <span style="color:#007bff;">
                         <i class="fas fa-microscope fa-3x"></i>
                     </span>
-                    <h3>Item 2</h3>
-                    <p>Random text. Random text. Random text. Random text. Random text. Random text. </p>
+                    <h3>Analyse :</h3>
+                    <p style="max-width:33%;margin:auto;">Les prélèvements effectués sont transmis à notre équipe de laboratoire afin d'être analysés avec le plus grand soin.</p>
                 </div>
                 <div>
                     <span style="color:#007bff;">
                         <i class="fas fa-calendar-check fa-3x"></i>
                     </span>
-                    <h3>Item 3</h3>
-                    <p>Random text. Random text. Random text. Random text. Random text. Random text. </p>
+                    <h3>Résultats :</h3>
+                    <p style="max-width:33%;margin:auto;">Une fois les analyses terminés, les donnés sont mis en ligne dont vous aurez l'accès immediat sur cette plateforme si vous le souhaitez.</p>
                 </div>
             </div>
         </section>

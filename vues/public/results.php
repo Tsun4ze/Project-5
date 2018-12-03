@@ -112,13 +112,7 @@ ob_start();
         <div id="chart_div9" style="width: 40%; height:250px;margin:auto;"></div>
         
     </div>
-   
-            
-    
 
-    <div >
-        <a href="index.php?act=PDF" target="_blank" class="btn btn-primary">Générer un document PDF</a>
-    </div>
 </section>
 
 

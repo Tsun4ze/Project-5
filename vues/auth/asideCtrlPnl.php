@@ -24,17 +24,6 @@
                 </a>
             </li>
 
-            <br />
-
-            <li>
-                <a href="#">
-                    <span>
-                        <i class="fas fa-user-edit"></i>
-                    </span>
-                    Modifier les résultats utilisateur
-                </a>
-            </li>
-            
         </ul>
 
     </div>

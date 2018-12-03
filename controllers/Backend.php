@@ -66,4 +66,21 @@ class Backend
             $session->setFlash('Un ou plusieurs champs sont vides !', 'warning');
         }
     }
+
+    public function errorUser()
+    {
+        $session = new Session();
+        $session->setFlash('Données non disponible.', 'warning');
+
+        header('Location: '.$_SERVER['HTTP_REFERER']);
+        exit();
+    }
+
+    public function dataUser()
+    {
+        $db = Database::dbconnect();
+        $dataManager = New DataUserManager($db);
+
+        require 'vues/auth/uptDataClient.php';
+    }
 }

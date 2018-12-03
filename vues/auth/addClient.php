@@ -5,7 +5,7 @@ ob_start();
 
 <section class="add row">
 <?php require 'vues/auth/asideCtrlPnl.php'; ?> 
-    <div class="loginForm">
+    <div class="listUser">
         <h2 class="loginTitle">Ajouter un nouveau patient :</h2>
         <br />
 
