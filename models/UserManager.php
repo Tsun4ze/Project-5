@@ -1,10 +1,12 @@
 <?php
+namespace Projet5\models;
+
 
 class UserManager extends Manager
 {
     public $_db;
     
-	public function __construct(PDO $db)
+	public function __construct($db)
 	{
 		$this->_db = $db;
     }

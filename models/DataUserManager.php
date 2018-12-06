@@ -1,10 +1,12 @@
 <?php
+namespace Projet5\models;
+
 
 class DataUserManager extends Manager
 {
     public $_db;
     
-	public function __construct(PDO $db)
+	public function __construct($db)
 	{
 		$this->_db = $db;
     }
@@ -17,8 +19,8 @@ class DataUserManager extends Manager
             WHERE Nom = :userNom AND Prenom = :userPrenom';
         
         $req = $this->_db->prepare($sql);
-        $req->bindValue(':userNom', $_SESSION['nom'], PDO::PARAM_STR);
-        $req->bindValue(':userPrenom', $_SESSION['prenom'], PDO::PARAM_STR);
+        $req->bindValue(':userNom', $_SESSION['nom'], \PDO::PARAM_STR);
+        $req->bindValue(':userPrenom', $_SESSION['prenom'], \PDO::PARAM_STR);
         $req->execute();
 
         while($userDonnes = $req->fetch())

@@ -3,10 +3,10 @@ if(session_status() == PHP_SESSION_NONE) :
 	session_start();
 endif;
 
-require 'models/autoload.php';
+include 'models/autoload.php';
 
-require 'controllers/Frontend.php';
-require 'controllers/Backend.php';
+include 'controllers/Frontend.php';
+include 'controllers/Backend.php';
 
 $frontend = new Frontend();
 $backend = new Backend();

@@ -1,11 +1,18 @@
 <?php
+require_once ('models/Database.php');
+require_once ('models/Manager.php');
+require_once ('models/User.php');
+require_once ('models/UserManager.php');
+require_once ('models/DataUser.php');
+require_once ('models/DataUserManager.php');
+require_once ('models/Session.php');
 
 class Backend
 {
     public function login()
     {
-        $db = Database::dbconnect();
-        $usrManager = new UserManager($db);
+        $db = Projet5\models\Database::dbconnect();
+        $usrManager = new Projet5\models\UserManager($db);
 
         if(isset($_POST['vldLog']))
         {
@@ -18,7 +25,7 @@ class Backend
             }
             else
             {
-                $session = new Session();
+                $session = new Projet5\models\Session();
                 $session->setFlash('L\'un des champs est vide.', 'warning');
 
                 header('Location:'.$_SERVER['HTTP_REFERER']);
@@ -35,8 +42,8 @@ class Backend
 
     public function userLablist()
     {
-        $db = Database::dbconnect();
-        $usrManager = New UserManager($db);
+        $db = Projet5\models\Database::dbconnect();
+        $usrManager = New Projet5\models\UserManager($db);
 
         require 'vues/auth/userList.php';
     }
@@ -48,13 +55,13 @@ class Backend
 
     public function newUser()
     {
-        $db = Database::dbconnect();
-        $userMgr = New UserManager($db);
+        $db = Projet5\models\Database::dbconnect();
+        $userMgr = New Projet5\models\UserManager($db);
 
         if(!empty($_POST['addName']) && !empty($_POST['addPre']) && !empty($_POST['addMail']) && !empty($_POST['addBirth']) && !empty($_POST['addPwd']))
         {
             $userMgr->addUser();
-            $session = new Session();
+            $session = new Projet5\models\Session();
             $session->setFlash('Utilisateur enregistré !', 'success');
 
             header('Location: index.php?act=usrList');
@@ -62,14 +69,14 @@ class Backend
         }
         else
         {
-            $session = new Session();
+            $session = new Projet5\models\Session();
             $session->setFlash('Un ou plusieurs champs sont vides !', 'warning');
         }
     }
 
     public function errorUser()
     {
-        $session = new Session();
+        $session = new Projet5\models\Session();
         $session->setFlash('Données non disponible.', 'warning');
 
         header('Location: '.$_SERVER['HTTP_REFERER']);
@@ -78,18 +85,18 @@ class Backend
 
     public function dataUser()
     {
-        $db = Database::dbconnect();
-        $dataManager = new DataUserManager($db);
+        $db = Projet5\models\Database::dbconnect();
+        $dataManager = new Projet5\models\DataUserManager($db);
 
         require 'vues/auth/uptDataClient.php';
     }
 
     public function updateUser()
     {
-        $db = Database::dbconnect();
-        $dataManager = new DataUserManager($db);
+        $db = Projet5\models\Database::dbconnect();
+        $dataManager = new Projet5\models\DataUserManager($db);
 
-        $dataUpdate = new DataUser(array(
+        $dataUpdate = new Projet5\models\DataUser(array(
             'id' => $_POST['id'],
             'Hematie' => $_POST['hematie'],
             'Hemoglob' => $_POST['hemoglob'],
@@ -104,7 +111,7 @@ class Backend
 
         $dataManager->updDataUser($dataUpdate);
 
-        $session = new Session();
+        $session = new Projet5\models\Session();
         $session->setFlash('Mise à jour effectuée.', 'success');
 
         header('Location: index.php?act=usrList');

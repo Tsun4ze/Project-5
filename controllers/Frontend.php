@@ -1,4 +1,8 @@
 <?php
+require_once ('models/Database.php');
+require_once ('models/Manager.php');
+require_once ('models/DataUserManager.php');
+require_once ('models/Session.php');
 
 class Frontend
 {
@@ -21,8 +25,8 @@ class Frontend
     
     function userResults()
     {
-        $db = Database::dbconnect();
-        $dataList = new DataUserManager($db);
+        $db = Projet5\models\Database::dbconnect();
+        $dataList = new Projet5\models\DataUserManager($db);
         require 'vues/public/results.php';
     }
 

@@ -1,4 +1,5 @@
 <?php
+namespace Projet5\models;
 
 class Database
 {
@@ -11,8 +12,8 @@ class Database
   
     public static function dbconnect(){
       try {
-        self::$connection = new PDO("mysql:host=". self::$dbHost .";dbname=". self::$dbName .";charset=utf8", self::$dbUser , self::$dbUserPassword);
-        self::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        self::$connection = new \PDO("mysql:host=". self::$dbHost .";dbname=". self::$dbName .";charset=utf8", self::$dbUser , self::$dbUserPassword);
+        self::$connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
       } 
       catch (Exception $e) 
       {

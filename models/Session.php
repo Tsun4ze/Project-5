@@ -1,4 +1,5 @@
 <?php
+namespace Projet5\models;
 
 class Session 
 {

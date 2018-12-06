@@ -1,7 +1,7 @@
 <?php
 require 'models/fpdf181/fpdf.php';
 /* require 'models/fpdf181/html_table.php'; */
-$db = Database::dbconnect();
+$db = Projet5\models\Database::dbconnect();
 
 
 class PDF extends FPDF
@@ -22,8 +22,8 @@ class PDF extends FPDF
             WHERE nom = :userNom AND prenom = :userPrenom';
                 
         $req = $db->prepare($sql);
-        $req->bindValue(':userNom', $_SESSION['nom'], PDO::PARAM_STR);
-        $req->bindValue(':userPrenom', $_SESSION['prenom'], PDO::PARAM_STR);
+        $req->bindValue(':userNom', $_SESSION['nom'], \PDO::PARAM_STR);
+        $req->bindValue(':userPrenom', $_SESSION['prenom'], \PDO::PARAM_STR);
         $req->execute();
         $row = $req->fetch();
 
@@ -51,11 +51,11 @@ class PDF extends FPDF
     {
         $this->SetFont('Times', '', 12);
         $req2 = $db->prepare('SELECT * FROM datauser WHERE Nom = :userNom AND Prenom = :userPrenom');
-        $req2->bindValue(':userNom', $_SESSION['nom'], PDO::PARAM_STR);
-        $req2->bindValue(':userPrenom', $_SESSION['prenom'], PDO::PARAM_STR);
+        $req2->bindValue(':userNom', $_SESSION['nom'], \PDO::PARAM_STR);
+        $req2->bindValue(':userPrenom', $_SESSION['prenom'], \PDO::PARAM_STR);
         $req2->execute();
 
-        while($row2 = $req2->fetch(PDO::FETCH_OBJ))
+        while($row2 = $req2->fetch(\PDO::FETCH_OBJ))
         {
             $this->Cell(60,10,utf8_decode('Hématie'),1,0,'L');
             $this->Cell(50,10, $row2->Hematie.' M/mm3',1,0,'C');
