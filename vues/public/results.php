@@ -3,7 +3,11 @@ ob_start();
 ?>
 
 <section class="login">
-
+    <div style='text-align:center;'>
+        <h2>Bonjour <?=$_SESSION['nom'] ?> <?= $_SESSION['prenom'] ?></h2>
+        <p>Voiçi vos resultats :</p>
+        <br />
+    </div>
     <table class="table table-hover">
         <thead class="thead-dark">
             <tr>
@@ -113,6 +117,20 @@ ob_start();
         
     </div>
 
+    <br />
+    <br />
+
+    <div style='text-align: center;'>
+        <h2> Téléchargement PDF içi :</h2>
+        <br />
+        <a href="index.php?act=PDF" target="_blank" class="btn btn-primary">
+                <span>
+                    <i class="fas fa-file-pdf"></i>
+                </span>
+                Générer un document PDF de mes résultats
+            </a>
+    </div>
+    <br />
 </section>
 
 

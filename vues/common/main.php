@@ -89,7 +89,7 @@ $session = new Session();
             var options = {
                 bars: 'vertical',
                 vAxis: {format: 'decimal'},
-                colors: ['#1b9e77', '#7570b3', '#cc0000']
+                colors: ['#1b9e77', '#007bff', '#cc0000']
             };
 
             // Create the data Table

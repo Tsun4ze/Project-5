@@ -49,4 +49,23 @@ class DataUserManager extends Manager
 
         return $listData;
     }
+
+    public function updDataUser(DataUser $dataUpdate)
+    {
+        $sql = 'UPDATE datauser SET  Hematie = :hematie, Hemoglob = :hemoglob, Hemato = :hemato, PN = :pn, PE = :pb, PB =:pb, Lympho = :lympho, Monocy = :monocy, Plaquette = :plaquette WHERE id = :id';
+
+        $req = $this->_db->prepare($sql);
+        $req->execute(array(
+            'hematie' => $dataUpdate->Hematie(),
+            'hemoglob' => $dataUpdate->Hemoglob(),
+            'hemato' => $dataUpdate->Hemato(),
+            'pn' => $dataUpdate->PN(),
+            'pe' => $dataUpdate->PE(),
+            'pb' => $dataUpdate->PB(),
+            'lympho' => $dataUpdate->Lympho(),
+            'monocy' => $dataUpdate->Monocy(),
+            'plaquette' => $dataUpdate->Plaquette(),
+            'id' => $dataUpdate->id()
+        ));
+    }
 }

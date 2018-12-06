@@ -79,8 +79,35 @@ class Backend
     public function dataUser()
     {
         $db = Database::dbconnect();
-        $dataManager = New DataUserManager($db);
+        $dataManager = new DataUserManager($db);
 
         require 'vues/auth/uptDataClient.php';
+    }
+
+    public function updateUser()
+    {
+        $db = Database::dbconnect();
+        $dataManager = new DataUserManager($db);
+
+        $dataUpdate = new DataUser(array(
+            'id' => $_POST['id'],
+            'Hematie' => $_POST['hematie'],
+            'Hemoglob' => $_POST['hemoglob'],
+            'Hemato' => $_POST['hematocrite'],
+            'PN' => $_POST['polNeu'],
+            'PE' => $_POST['polEos'],
+            'PB' => $_POST['polBas'],
+            'Lympho' => $_POST['lympho'],
+            'Monocy' => $_POST['mono'],
+            'Plaquette' => $_POST['plaquette'],
+        ));
+
+        $dataManager->updDataUser($dataUpdate);
+
+        $session = new Session();
+        $session->setFlash('Mise à jour effectuée.', 'success');
+
+        header('Location: index.php?act=usrList');
+        exit();
     }
 }

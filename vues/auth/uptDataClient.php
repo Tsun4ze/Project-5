@@ -11,11 +11,11 @@ ob_start();
     ?>
 
     <div class="listUser">
-        <h2 class="loginTitle"> Modifier les résultats de <?= $dataUpt->Nom() ?> <?= $dataUpt->Prenom() ?>:</h2>
+        <h2 class="loginTitle"> Modifier les résultats de <span style="text-decoration:underline;"> <?= $dataUpt->Nom() ?> <?= $dataUpt->Prenom() ?></span> :</h2>
         <br />
             
 
-        <form action="" method="post">
+        <form action="index.php?act=updtClient" method="post">
         
         <p>
             <div class="row">
@@ -63,6 +63,7 @@ ob_start();
                     <label for="plaq">Plaquettes : </label><br />
                     <input type="text" name="plaquette" id="plaq" class="form-control" value="<?= $dataUpt->Plaquette() ?>"style="width: 35%;">
                 </div>
+                <input type="hidden" name="id" value="<?= $dataUpt->id() ?>">
             </div>
                 <br />
 

@@ -12,13 +12,19 @@ ob_start();
         <div class="row justify-content-around">
         
             <a href="index.php?act=results" class="btn btn-primary">
+                <span>
+                    <i class="fas fa-table"></i>
+                </span>
                 Mes derniers résultats en ligne
             </a>
 
             <br />
 
             <a href="index.php?act=PDF" target="_blank" class="btn btn-primary">
-                Générer un document PDF
+                <span>
+                    <i class="fas fa-file-pdf"></i>
+                </span>
+                Générer un document PDF de mes résultats
             </a>
         </div>
         

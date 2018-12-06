@@ -26,7 +26,7 @@ try
                 }
                 else
                 {
-                    header('Location: index.php?act=dashboard');
+                    header('Location: index.php?act=results');
                     exit();
                 }
                 
@@ -40,10 +40,6 @@ try
         elseif($_GET['act'] === 'connect')
         {
             $frontend->userconnect();
-        }
-        elseif($_GET['act'] === 'dashboard')
-        {
-            $frontend->dashboard();
         }
         elseif($_GET['act'] === 'dashLab')
         {
@@ -76,7 +72,7 @@ try
         {
             $backend->newUser();
         }
-        elseif($_GET['act'] ==='update')
+        elseif($_GET['act'] === 'update')
         {
             if(isset($_GET['nm']) && isset($_GET['pre']))
             {
@@ -86,6 +82,10 @@ try
             {
                 $backend->errorUser();
             }
+        }
+        elseif($_GET['act'] === 'updtClient')
+        {
+            $backend->updateUser();
         }
     }
     

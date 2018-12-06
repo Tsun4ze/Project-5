@@ -34,7 +34,7 @@ class UserManager extends Manager
             }
             else
             {
-                header('Location: index.php?act=dashboard');
+                header('Location: index.php?act=results');
                 exit();
             }
 
