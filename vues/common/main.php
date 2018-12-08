@@ -25,11 +25,11 @@ $session = new Projet5\models\Session();
                     <?php
                         if(isset($_SESSION['logged']) && $_SESSION['logged'] === 'true')
                         {
-                            echo '<a href="index.php?act=login">Profil</a>';
+                            echo '<h5><a href="index.php?act=login">Profil</a></h5>';
                         }
                         else
                         {
-                            echo '<a href="index.php?act=connect">Connexion</a>';
+                            echo '<h5><a href="index.php?act=connect">Connexion</a></h5>';
                         }
                         ?>
                     

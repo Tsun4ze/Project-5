@@ -5,18 +5,17 @@ ob_start();
         <div class="row container-fluid login justify-content-around">
         
             <section>
-                <h2>Random Stuff:</h2>
+                <h2>Information :</h2>
                 <p>
-                    Follow the step. <br/>
-                    Follow the step. <br/>
-                    Follow the step. <br/>
-                    Follow the step. <br/>
-                    Follow the step. <br/>
-                    Follow the step. <br/>
-                    Follow the step. <br/>
-                    Follow the step. <br/>
-                    Follow the step. <br/>
-                    Follow the step. <br/>
+                    Vous avez reçu, <br/>
+                    par courrier ou via un agent de FuturLab<br/>
+                    les informations vous permettant<br/>
+                    de consulter vos résultats<br/>
+                    sur cette plateforme.<br/>
+                    <br/>
+                    <br />
+                    Utilisez les identifiants içi,<br />
+                    pour pouvoir vous connecter.
                 </p>
             </section>
 

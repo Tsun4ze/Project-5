@@ -151,8 +151,9 @@ footer
 }
 @media screen and (max-width: 1200px)
 {
-    .bgMov
+    .title
     {
-        visibility: hidden;
+        top: 200px;
     }
 }
+
